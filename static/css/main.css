@@ -1,0 +1,43 @@
+
+.content-wrapper {
+    padding: 10px;
+}
+
+body {
+    background-color: #ffdd84;
+    color: #000000 ;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+}
+
+/* table stuff */
+table {
+    table-layout: auto;
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-size: .8rem;
+    color: #010110;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif
+}
+
+tbody {
+    background-color: lightblue;
+}
+
+thead,
+tfoot {
+    background-color: #929a9e;
+    color: #150101;
+}
+
+td,
+th {
+    width: fit-content;
+    border: 1px solid rgb(190, 190, 190);
+    padding: 5px 10px;
+}
+
+.invisible {
+    display: none;
+}

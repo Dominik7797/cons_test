@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="/static/javascript/sw.js" defer></script>
+</head>
+<body>
+<button>Back</button>
+<button>Next</button>
+    <div class="main_table">
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Diameter</th>
+                    <th>Climate</th>
+                    <th>Terrain</th>
+                    <th>Surface Water Percentage</th>
+                    <th>Population</th>
+                    <th>Residents</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for data in planets %}
+                    <tr>
+                        <td>{{ data['name'] }}</td>
+                        <td>{{ data['diameter'] + "km" }}</td>
+                        <td>{{ data['climate'] }}</td>
+                        <td>{{ data['terrain'] }}</td>
+                        <td>{{ data['surface_water'] + "%" }}</td>
+                        <td>{{ data['population'] }}</td>
+                        <td>
+                            {% if data['residents'] | length %}
+                                <button class="residents">
+                                    {{ data['residents'] | length }}
+                                    {% for resident in data['residents'] %}
+                                        <a class="invisible" href="{{ resident }}">{{ resident }}</a>
+                                    {% endfor %}
+                                </button>
+                            {% else %}
+                                No residents
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+    </div>
+</input>
+</html>
